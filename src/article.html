@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<style>
+		#app {
+			padding: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+			<h1>Create a new Article</h1>
+		<form>
+			<div class="form-group">
+				<label for="exampleInputTitle">Title</label>
+				<input type="text" class="form-control" id="title-input" >
+				
+			</div>
+			<div class="form-group">
+				<label for="exampleInputSeoTitle">SEO Title</label>
+				<input type="text" class="form-control" id="seo-title-input" >
+			</div>
+			<div class="form-group">
+				<label for="exampleInputSeoMetaDescription">SEO Meta Description</label>
+				<input type="text" class="form-control" id="seo-meta-input" >
+			</div>
+			<div class="form-group">
+				<label for="exampleInputBody">Body</label>
+				<textarea type="text" class="form-control" id="body-input" ></textarea>
+			</div>
+			<div class="form-group form-check">
+				<input type="checkbox" class="form-check-input" id="example-check">
+				<label class="form-check-label" for="exampleCheck1">Check Example</label>
+			</div>
+			<div id="error-container">
+
+			</div>
+			<button id="btn-save" type="button" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+
+	<script>
+
+		const btnSave = document.querySelector('button#btn-save');
+
+		btnSave.addEventListener('click', (e) => {
+			e.preventDefault();
+			window.location = '/goodjob.html';
+		});
+
+	</script>
+
+</body>
+
+</html>
