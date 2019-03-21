@@ -18,9 +18,11 @@
 			<h1>Create a new Article</h1>
 		<form>
 			<div class="form-group">
-				<label for="exampleInputTitle">Title</label>
-				<input type="text" class="form-control" id="title-input" >
-				
+				<label for="exampleInputTitle">Title (*)</label>
+				<input type="text" class="form-control" id="title-input" >	
+			</div>
+			<div id="error-container">
+
 			</div>
 			<div class="form-group">
 				<label for="exampleInputSeoTitle">SEO Title</label>
@@ -36,11 +38,9 @@
 			</div>
 			<div class="form-group form-check">
 				<input type="checkbox" class="form-check-input" id="example-check">
-				<label class="form-check-label" for="exampleCheck1">Check Example</label>
+				<label class="form-check-label" for="exampleCheck1">Check Article</label>
 			</div>
-			<div id="error-container">
-
-			</div>
+			
 			<button id="btn-save" type="button" class="btn btn-primary">Save</button>
 		</form>
 	</div>
@@ -50,8 +50,17 @@
 		const btnSave = document.querySelector('button#btn-save');
 
 		btnSave.addEventListener('click', (e) => {
-			e.preventDefault();
-			window.location = '/goodjob.html';
+			e.preventDefault();	
+			const title = document.querySelector('input#title-input').value;
+			if (title != '') {
+				window.location = '/goodjob.html';
+			} else {
+				const errorEl = document.createElement('p');
+				errorEl.id = 'container-error'
+				const errorContainer = document.querySelector('div#error-container');
+				errorEl.textContent = 'Campo Obligatorio';
+				errorContainer.appendChild(errorEl);
+			}
 		});
 
 	</script>
